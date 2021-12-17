@@ -20,6 +20,7 @@ class Ui_to_Py(QtWidgets.QMainWindow, main_window.Ui_Ui_to_Py):
         self.pushButton_1.clicked.connect(self.browse_file) 
         self.pushButton_2.clicked.connect(self.browse_folder)
         self.pushButton_3.clicked.connect(self.conversor)
+        self.actionDoe.triggered.connect(lambda: print('OK'))
     
     
     def browse_file(self):
