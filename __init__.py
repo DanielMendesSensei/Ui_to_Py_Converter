@@ -36,10 +36,12 @@ class Ui_to_Py(QtWidgets.QMainWindow, main_window.Ui_Ui_to_Py):
 
     def conversor(self):
         c_1, c_2 = 'pyuic5', '-o'
-        name_1 = '/teste.py'
+        name_in = os.path.basename(self.file_name)
+        name_fi = os.path.splitext(name_in) [0]
         try:
             if self.path_1 == None and self.path_2 == None:
-                comma = f'{c_1} "{self.file_name}" {c_2} "{self.folder_name}{name_1}"'
+                comma = f'{c_1} "{self.file_name}" {c_2} "{self.folder_name}/{name_fi}.py"'
+                print(comma)
                 os.system(comma)
                 self.popup_concluido()
 
